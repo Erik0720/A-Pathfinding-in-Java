@@ -18,14 +18,13 @@ public class Gui {
         this.name = name;
     }
 
-    public void createGUI(int size) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void createGUI(int size) {
         JFrame frame = new JFrame();
         frame.setSize(800,900);
         frame.setTitle(name);
         frame.setLocationRelativeTo(null);      //Fenster erscheint Relativ zur Mitte des Bildschirms
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);      //Programm wird durch schließen des Fensters beendet
         frame.setResizable(false);
-        javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 
         JPanel gridPanel = new JPanel();
         gridPanel.setLayout(new GridLayout(size, size));
