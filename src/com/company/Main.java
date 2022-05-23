@@ -1,12 +1,25 @@
 package com.company;
 
 
-import javax.swing.*;
 
-public class Main {
+
+public class Main implements Runnable{
+    GUI gui = new GUI();
 
     public static void main(String[] args) {
-        Gui gui = new Gui(40, "Visualization");
-        gui.createGUI(40);
+        new Thread(new Main()).start();
     }
+
+    @Override
+    public void run() {
+        while(true) {
+            gui.repaint();
+            try {
+                Thread.sleep(75);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
